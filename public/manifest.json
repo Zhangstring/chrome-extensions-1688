@@ -1,25 +1,29 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+	"name": "1688",
+	"description": "1688",
+	"version": "1.0",
+	"manifest_version": 3,
+	"action": {
+		"default_popup": "index.html",
+    "default_icon": {
+      "16": "/img/icon.png",
+      "32": "/img/icon.png",
+      "48": "/img/icon.png",
+      "128": "/img/icon.png"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+	},
+  "icons": {
+    "16": "/img/icon.png",
+    "32": "/img/icon.png",
+    "48": "/img/icon.png",
+    "128": "/img/icon.png"
+  },
+	"permissions": ["scripting", "downloads", "storage"],
+	"host_permissions": ["http://*/*", "https://*/*"],
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["jquery-3.6.0.js", "content-script.js"]
+		}
+	]
 }
